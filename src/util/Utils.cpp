@@ -35,9 +35,11 @@ std::optional<Config> Config::fromArgs(int argc, char ** argv)
 
 void from_json(const nlohmann::json & j, Config::Sender & c)
 {
-  UNFINISHED(__PRETTY_FUNCTION__);
-
+  // UNFINISHED(__PRETTY_FUNCTION__);
   j.at("localPort").get_to(c.localPort);
+  j.at("remoteAddress").get_to(c.remoteAddress);
+  j.at("remotePort").get_to(c.remotePort);
+  
 }
 
 void from_json(const nlohmann::json & j, Config::Receiver & c)
