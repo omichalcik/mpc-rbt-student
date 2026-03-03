@@ -18,10 +18,16 @@ public:
     config(senderConfig),
     timer_period(config.sendingPeriodMillis)
   {
-    // UNIMPLEMENTED(__PRETTY_FUNCTION__);    
-    callback = [this]() {
-      this->onDataTimerTick();
-    };
+    try {
+      create();
+      configure();
+      bind();
+    } catch (const std::exception & e) {
+      RCLCPP_FATAL(rclcpp::get_logger("sender"), "Socket setup failed: %s", e.what());
+      throw;
+    }
+
+    callback = [this]() { this->onDataTimerTick(); };
   }
 
   void run();

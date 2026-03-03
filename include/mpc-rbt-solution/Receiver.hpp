@@ -12,7 +12,15 @@ public:
   explicit Node(const Utils::Config::Receiver & receiverConfig)
   : Socket::UDP(receiverConfig.localPort), config(receiverConfig)
   {
-    // UNIMPLEMENTED(__PRETTY_FUNCTION__);
+    try {
+      create();
+      configure();
+      bind();
+    } catch (const std::exception & e) {
+      RCLCPP_FATAL(rclcpp::get_logger("receiver"), "Socket setup failed: %s", e.what());
+      throw;
+    }
+
     callback = std::bind(&Node::onDataReceived, this, std::placeholders::_1);
   }
 
