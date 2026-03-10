@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.8)
-project(lab_test_pkg)
+project(ros_intro_pkg)
 
 # Use C++ 17
 SET(CMAKE_CXX_STANDARD 17)

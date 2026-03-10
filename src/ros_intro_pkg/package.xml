@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
-  <name>lab_test_pkg</name>
-  <version>0.0.0</version>
-  <description>TODO: Package description</description>
-  <maintainer email="standa.svediroh@gmail.com">standa</maintainer>
+  <name>ros_intro_pkg</name>
+  <version>0.0.1</version>
+  <description>ROS intro package for MPC-RBT</description>
+  <maintainer email="stanislav.svediroh@vut.cz">Stanislav Svědiroh</maintainer>
   <license>Apache-2.0</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>

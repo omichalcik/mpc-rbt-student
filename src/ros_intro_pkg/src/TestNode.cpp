@@ -28,7 +28,7 @@ public:
         subscription3_ = create_subscription<std_msgs::msg::String>("node_name", 1, std::bind(&TestNode::topic_3_callback, this, std::placeholders::_1));
 
         auto param_desc = rcl_interfaces::msg::ParameterDescriptor{};
-        param_desc.description = "This parameter changes the publishing frequency of the battery voltage masurement!";
+        param_desc.description = "This parameter changes the publishing frequency of the battery voltage measurement!";
         this->declare_parameter("battery_voltage_hz", 2, param_desc);
 
         createTimer4();
