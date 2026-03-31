@@ -10,6 +10,10 @@
 #include "nav_msgs/srv/get_map.hpp"
 #include "nav_msgs/srv/get_plan.hpp"
 
+#include "tf2_ros/buffer.h"
+#include "tf2_ros/transform_listener.h"
+#include "geometry_msgs/msg/transform_stamped.hpp"
+
 // A-star cell structure
 struct Cell {
     int x, y;
@@ -48,6 +52,10 @@ private:
     // Data
     nav_msgs::msg::OccupancyGrid map_;
     nav_msgs::msg::Path path_;
+
+    std::unique_ptr<tf2_ros::Buffer> tf_buffer_;
+    std::shared_ptr<tf2_ros::TransformListener> tf_listener_;
+
 };
 
 #endif // PLANNING_HPP

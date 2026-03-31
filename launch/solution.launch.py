@@ -14,6 +14,14 @@ def generate_launch_description():
         output='screen',
         parameters=[{'use_sim_time': True}]
     )
+    
+    planning_node = Node(
+        package='mpc_rbt_student',
+        executable='planning_node',
+        name='planning_node',
+        output='screen',
+        parameters=[{'use_sim_time': True}]
+    )
 
     rviz_node = Node(
         package='rviz2',
@@ -26,5 +34,6 @@ def generate_launch_description():
     
     return LaunchDescription([
         localization_node,
+        planning_node,
         rviz_node
     ])

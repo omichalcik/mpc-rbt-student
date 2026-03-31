@@ -9,7 +9,7 @@ LocalizationNode::LocalizationNode() :
     odometry_.header.frame_id = "map";
     odometry_.child_frame_id = "base_link";
 
-    odometry_.pose.pose.position.x = 0.0;
+    odometry_.pose.pose.position.x = -0.5;
     odometry_.pose.pose.position.y = 0.0;
     odometry_.pose.pose.position.z = 0.0;
 
